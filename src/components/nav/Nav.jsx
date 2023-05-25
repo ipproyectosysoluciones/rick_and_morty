@@ -10,13 +10,13 @@ import { Link } from "react-router-dom";
  */
  export default function Nav ( { onSearch } ) {
 
-  const handleLogout = () => {
-    // Eliminar los permisos de acceso aquí
-    // Por ejemplo, puedes borrar el token de autenticación almacenado en el localStorage o en el estado global
+  // const handleLogout = () => {
+  //   // Eliminar los permisos de acceso aquí
+  //   // Por ejemplo, puedes borrar el token de autenticación almacenado en el localStorage o en el estado global
 
-    // Redirigir al componente Form
-    setAccess( false );
-  };
+  //   // Redirigir al componente Form
+  //   setAccess( false );
+  // };
   
   return (
     <nav>
@@ -27,7 +27,7 @@ import { Link } from "react-router-dom";
       <button>
         <Link to='/home' > Home |</Link>
       </button>
-      <button cnClick={ handleLogout }>Log out</button>
+      {/* <button cnClick={ handleLogout }>Log out</button> */}
     </nav>
   );
 }

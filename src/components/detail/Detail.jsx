@@ -11,9 +11,7 @@ export default function Detail () {
   const [ character, setCharacter ] = useState({});
 
   useEffect(() => {
-      axios(`${ URL_BASE }/${ id }`)
-      .then( resp => resp.data )
-      .then(( data ) => {
+      axios(`${ URL_BASE }/${ id }`).then(( {data} ) => {
         if ( data.name ) {
             setCharacter( data );
         } else {
@@ -23,14 +21,17 @@ export default function Detail () {
       return setCharacter({});
   }, [ id ]);
 
+  
   return(
     <div>
-      <h2>{ character.name }</h2>
-      <h3>{ character.status }</h3>
-      <h3>{ character.species }</h3>
-      <h3>{ character.gender }</h3>
-      <h3>{ character.origin?.name }</h3>
-      <img src={ character.image } alt={ character.name } />
+      <div>
+        <h2>{ character.name }</h2>
+        <h3>{ character.status }</h3>
+        <h3>{ character.species }</h3>
+        <h3>{ character.gender }</h3>
+        <h3>{ character.origin?.name }</h3>
+        <img src={ character.image } alt={ character.name } />
+      </div>
     </div>
   );
 }

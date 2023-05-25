@@ -12,7 +12,7 @@ export default function Cards ( { characters, onClose } ) {
    return (
       <div>
          {
-            characters && characters.map( ({ id, name, status, species, gender, image, origin }) => {
+            characters.map( ({ id, name, status, species, gender, image, origin }) => {
                return (
                   <Card
                      key={ id }

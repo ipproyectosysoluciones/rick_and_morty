@@ -5,7 +5,7 @@ import About from './components/about/About';
 import Detail from './components/detail/Detail';
 // import Form from './components/form/Form';
 import axios from 'axios';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { useState  } from 'react';
 
 
@@ -48,14 +48,13 @@ function App() {
     */
    const onSearch = ( id ) => {
       axios(`${ URL_BASE }/${ id }`)
-      .then( resp => resp.data )
-      .then(( data ) => {
+      .then(( {data} ) => {
          if ( data.name ) {
             setCharacters(( oldChars ) => [ ...oldChars, data ]);
          } else {
             window.alert( '¡No hay personajes con este ID!' );
          }
-      }, [id]);
+      });
    }
 
    /**
@@ -68,20 +67,19 @@ function App() {
       setCharacters( charactersFiltered );
    };
 
-  //  const location = useLocation();
+   const location = useLocation();
 
    return (
       <div className='App'>
-         {/* { 
-            location.pathname !== '/' ? <Nav onSearch={ onSearch } setAccess={ setAccess } /> : null 
-         } */}
-         <Nav onSearch={ onSearch }/>
+         { 
+            location.pathname !== '/' ? <Nav onSearch={ onSearch } /> : null 
+         }
          <hr />
          <Routes>
             {/* <Route path='/' element={ <Form login={ login } /> } /> */}
             <Route path='home' element={ <Cards characters={ characters } onClose={ onClose } /> } />
             <Route path='about' element={ <About/> } />
-            <Route path='detail/:detailId' element={ <Detail/> } />
+            <Route path='detail/:id' element={ <Detail/> } />
          </Routes>
       </div>
    );

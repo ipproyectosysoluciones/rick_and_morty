@@ -26,7 +26,7 @@ export default function SearchBar ( { onSearch } ) {
                value={ id }
                onChange={ handleChange }
                 />
-            <button onClick={ () => { onSearch( id ), setId( '' ) } }>Agregar</button>
+            <button onClick={ () => { onSearch( id ) }  }>Agregar</button>
             </>
          }
       </div>
