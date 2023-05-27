@@ -1,16 +1,11 @@
+import styles from './Cards.module.css';
 import Card from '../card/Card';
 
 // eslint-disable-next-line
-/**
- * 
- * @param { string } characters 
- * @param { string } onClose 
- * @returns 
- */
 export default function Cards ( { characters, onClose } ) {
 
    return (
-      <div>
+      <div className={ styles.cardsContainer }>
          {
             characters.map( ({ id, name, status, species, gender, image, origin }) => {
                return (

@@ -4,8 +4,9 @@ import Nav from './components/nav/Nav';
 import About from './components/about/About';
 import Detail from './components/detail/Detail';
 // import Form from './components/form/Form';
+import Favorites from './components/favorites/Favorites';
 import axios from 'axios';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { useState  } from 'react';
 
 
@@ -14,41 +15,29 @@ const URL_BASE = 'https://rickandmortyapi.com/api/character';
 // const EMAIL = 'ejemplo@gmail.com';
 // const PASSWORD = '1ABcde';
 
-/**
- * 
- * @returns 
- */
+
 function App() {
 
-  //  const [ access, setAccess ] = useState( false );
-
-   /**
-    * @description Esta función tiene que preguntar si el email y password que declaraste más arriba son iguales a los que les está llegando por parámetro
-    * @param { string } userData estado del usuario al hacer el  en el Form
-   */
-  //  const login = ( userData ) => {
-  //     if (userData.password === PASSWORD && userData.email === EMAIL) {
-  //        setAccess( true );
-  //        navigate( '/home' );
-  //     }
-  //  };
-   
-  //  const navigate = useNavigate();
-   
-  //  useEffect(() => {
-  //     !access && navigate('/');
-  //  }, [access, navigate]);
-   
+   // const location = useLocation();
+   // const navigate = useNavigate();
    const [ characters,  setCharacters ] = useState([]);
+   // const [ access, setAccess ] = useState( false );
+   
 
-   /**
-    * @description function onSearch que buscar los personajes de la API R&M
-    * @param { number } id ID de los personajes de R&M
-    * 
-    */
+   // const login = ( userData ) => {
+   //    if (userData.password === PASSWORD && userData.email === EMAIL) {
+   //       setAccess( true );
+   //       navigate( '/home' );
+   //    }
+   // };
+
+   // useEffect(() => {
+   //    !access && navigate('/');
+   // }, [access, navigate]);
+
    const onSearch = ( id ) => {
       axios(`${ URL_BASE }/${ id }`)
-      .then(( {data} ) => {
+      .then(({ data }) => {
          if ( data.name ) {
             setCharacters(( oldChars ) => [ ...oldChars, data ]);
          } else {
@@ -57,29 +46,28 @@ function App() {
       });
    }
 
-   /**
-    * @description function que realiza el cierre de las Cards
-    * @param { number } id de las personajes de R&M para hacer el cierre de las Cards
-    */
    const onClose = ( id ) => {
       const charactersFiltered = characters.filter( character => 
          character.id !== Number( id ));
       setCharacters( charactersFiltered );
    };
 
-   const location = useLocation();
+   // const location = useLocation();
+   // console.log(location);
 
    return (
       <div className='App'>
-         { 
-            location.pathname !== '/' ? <Nav onSearch={ onSearch } /> : null 
-         }
+         {/* { 
+            location.pathname !== '/' && <Nav onSearch={ onSearch }  /> 
+         } */}
+         <Nav onSearch={ onSearch }  /> 
          <hr />
          <Routes>
-            {/* <Route path='/' element={ <Form login={ login } /> } /> */}
-            <Route path='home' element={ <Cards characters={ characters } onClose={ onClose } /> } />
-            <Route path='about' element={ <About/> } />
-            <Route path='detail/:id' element={ <Detail/> } />
+            {/* <Route path='/' element={ <Form/> } /> */}
+            <Route path='/home' element={ <Cards characters={ characters } onClose={ onClose } /> } />
+            <Route path='/about' element={ <About/> } />
+            <Route path='/detail/:id' element={ <Detail/> } />
+            <Route path='favorites' element={ <Favorites/> } />
          </Routes>
       </div>
    );

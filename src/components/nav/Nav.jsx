@@ -1,13 +1,9 @@
+import React from "react";
 import SearchBar from "../searchBar/SearchBar";
 import { Link } from "react-router-dom";
 
 
 // eslint-disable-next-line
-/**
- * @description
- * @param { string } onSearch function que trae los ID de la API
- * @returns 
- */
  export default function Nav ( { onSearch } ) {
 
   // const handleLogout = () => {
@@ -17,7 +13,7 @@ import { Link } from "react-router-dom";
   //   // Redirigir al componente Form
   //   setAccess( false );
   // };
-  
+ 
   return (
     <nav>
       <SearchBar onSearch={ onSearch } />
@@ -26,6 +22,9 @@ import { Link } from "react-router-dom";
       </button>
       <button>
         <Link to='/home' > Home |</Link>
+      </button>
+      <button>
+        <Link to='/favorites' > Favorites |</Link>
       </button>
       {/* <button cnClick={ handleLogout }>Log out</button> */}
     </nav>

@@ -1,6 +1,7 @@
-import axios from "axios";
-import { useParams } from "react-router-dom";
+import styles from './Detail.module.css';
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 // eslint-disable-next-line
 const URL_BASE = 'https://rickandmortyapi.com/api/character';
@@ -24,7 +25,7 @@ export default function Detail () {
   
   return(
     <div>
-      <div>
+      <div className={ styles.container }>
         <h2>{ character.name }</h2>
         <h3>{ character.status }</h3>
         <h3>{ character.species }</h3>

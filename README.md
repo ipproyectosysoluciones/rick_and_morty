@@ -1,10 +1,3 @@
-# **💪 HW6 | React Intro - Integration**
-
-## **🕒 DURACIÓN ESTIMADA**
-
-3 horas
-
-</br >
 
 ---
 
@@ -44,12 +37,12 @@ En el archivo **`App.js`** ya hay importado 3 componentes: **Card**, **Cards** y
 
 Dirígete al componente **`Card`** y renderiza las siguientes propiedades de los personajes:
 
--  **name**: nombre.
--  **status**: status.
--  **species**: especie.
--  **gender**: género.
--  **origin**: origen (ten en cuenta que el nombre del origen viene dentro de otra propiedad llamada **`name`**).
--  **image**: imagen.
+- **name**: nombre.
+- **status**: status.
+- **species**: especie.
+- **gender**: género.
+- **origin**: origen (ten en cuenta que el nombre del origen viene dentro de otra propiedad llamada **`name`**).
+- **image**: imagen.
 
 Además, cuando el usuario haga click en la **X** de "cerrar", debe ejecutarse una función que también viene como props llamada **onClose**.
 
@@ -157,10 +150,10 @@ A partir de ahora todas las homeworks integradoras se trabajarán directamente e
 
 En esta homework podrás escoger entre cualquiera de los tipos de estilos que hemos aprendido en la lecture para aplicarlos en tu aplicación:
 
--  **Legacy**
--  **Inline Styling**
--  **CSS Module**
--  **Styled Components**
+- **Legacy**
+- **Inline Styling**
+- **CSS Module**
+- **Styled Components**
 
 > [**NOTA**]: en caso de utilizar **`Styled Components`** deberás instalar dicha dependencia desde la carpeta raíz de tu proyecto de **_Rick & Morty:_**
 
@@ -236,10 +229,10 @@ Puedes guiarte a partir de la siguiente imagen cómo puede quedar tu aplicación
 
 <img src="./img/layout.png" width='800px'/>
 
-> -  **Recuadro rojo**: Nav
-> -  **Recuadro amarillo**: SearchBar
-> -  **Recuadro verde**: Cards
-> -  **Recuadro azul**: Card
+> - **Recuadro rojo**: Nav
+> - **Recuadro amarillo**: SearchBar
+> - **Recuadro verde**: Cards
+> - **Recuadro azul**: Card
 
 <br />
 
@@ -447,10 +440,10 @@ Comenzaremos creando un componete llamador **Deatil** el cual solo mostrara una 
 
 Luego, dirígete al archivo **`App.js`**. Ahora crearemos las rutas de los componentes. Cada componente debe renderizarse en las siguientes rutas:
 
--  **Nav** debe que aparecer en todas las rutas.
--  **Cards** debe aparecer solo en la ruta **`/home`**.
--  **About** debe aparecer solo en la ruta **`/about`**.
--  **Detail** debe aparecer solo en la ruta **`/detail/:id`**.
+- **Nav** debe que aparecer en todas las rutas.
+- **Cards** debe aparecer solo en la ruta **`/home`**.
+- **About** debe aparecer solo en la ruta **`/about`**.
+- **Detail** debe aparecer solo en la ruta **`/detail/:id`**.
 
 > [**NOTA**]: ten en cuenta que la ruta del componente **Detail** recibe un parámetro **`id`**.
 
@@ -522,12 +515,12 @@ Ahora en el estado local **character** ya tenemos disponible toda la informació
 
 1. Renderiza **condicionalmente** cada una de estas propiedades.
 
--  **name**
--  **status**
--  **species**
--  **gender**
--  **origin** (ten en cuenta que el nombre se guarda dentro de otra propiedad "_name_")
--  **image**
+- **name**
+- **status**
+- **species**
+- **gender**
+- **origin** (ten en cuenta que el nombre se guarda dentro de otra propiedad "_name_")
+- **image**
 
 Debería quedarte algo como esto:
 
@@ -582,10 +575,10 @@ Ahora crearemos el formulario que nos permitirá logearnos en un futuro.
 1. Crea un componente con el nombre **`Form`**.
 2. Dentro de este componente se deben renderizar los siguientes elementos:
 
-   -  Una etiqueta **`form`** que envolverá a todo el componente.
-   -  Una etiqueta **`label`** junto con un **`input`** para el email.
-   -  Una etiqueta **`label`** junto con un **`input`** para la password.
-   -  Un **`button`** con el texto "**_Submit_**".
+   - Una etiqueta **`form`** que envolverá a todo el componente.
+   - Una etiqueta **`label`** junto con un **`input`** para el email.
+   - Una etiqueta **`label`** junto con un **`input`** para la password.
+   - Un **`button`** con el texto "**_Submit_**".
 
 ¡Dale algo de estilos al componente! Puede quedar algo como esto...
 
@@ -628,14 +621,14 @@ En este ejercicio controlaremos y gestionaremos la información que ingrese el u
 
 **EMAIL**
 
--  el nombre de usuario tiene que ser un email (¡Explora validaciónes REGEX en internet!).
--  el nombre de usuario no puede estar vacío.
--  el nombre de usuario no puede tener más de 35 caracteres.
+- el nombre de usuario tiene que ser un email (¡Explora validaciónes REGEX en internet!).
+- el nombre de usuario no puede estar vacío.
+- el nombre de usuario no puede tener más de 35 caracteres.
 
 **PASSWORD**
 
--  la contraseña tiene que tener al menos un número.
--  la contraseña tiene que tener una longitud entre 6 y 10 caracteres.
+- la contraseña tiene que tener al menos un número.
+- la contraseña tiene que tener una longitud entre 6 y 10 caracteres.
 
 ¡No te olvides de renderizar y darle estilos a tus errores! Te dejamos un ejemplo de cómo puede quedar.
 
@@ -651,9 +644,9 @@ Ahora simularemos una base de datos donde esté guardado un email y password. De
 
 1. En el archivo **`App.js`** crea lo siguiente:
 
-   -  Un estado local llamado "**access**" que se inicialice en **`false`**.
-   -  Una variable llamada "**EMAIL**", y que sea igual a tu email.
-   -  Una variable "**PASSWORD**", y que sea igual a una contraseña.
+   - Un estado local llamado "**access**" que se inicialice en **`false`**.
+   - Una variable llamada "**EMAIL**", y que sea igual a tu email.
+   - Una variable "**PASSWORD**", y que sea igual a una contraseña.
 
 </br >
 
@@ -758,9 +751,9 @@ Dentro del archivo **`store.js`** haz la configuración del store. Una vez confi
 
 1. Construye dos _actions-creators_:
 
-   -  **`addFav`**: esta función recibe un personaje por parámetro. Deberás retornar una action con el **type** igual a "**ADD_FAV**", y el payload igual a ese personaje.
+   - **`addFav`**: esta función recibe un personaje por parámetro. Deberás retornar una action con el **type** igual a "**ADD_FAV**", y el payload igual a ese personaje.
 
-   -  **`removeFav`**: esta función recibe un **id** por parámetro. Deberás retornar una action con el **type** igual a "**REMOVE_FAV**", y el payload igual a ese id.
+   - **`removeFav`**: esta función recibe un **id** por parámetro. Deberás retornar una action con el **type** igual a "**REMOVE_FAV**", y el payload igual a ese id.
 
 2. Exporta ambas funciones.
 
@@ -804,8 +797,8 @@ Dirígete a tu archivo **`reducer.js`**. Allí deberás:
 
 4. Crea una función en el cuerpo del componente llamada **handleFavorite**. Esta función estará dividida en dos partes:
 
-   -  Si el estado **isFav** es **`true`**, entonces settea ese estado en false, y despacha la función **removeFav** que recibiste por props pasándole el **id** del personaje como argumento.
-   -  Si el estado **isFav** es **`false`**, entonces settea ese estado en true, y despacha la función **addFav** que recibiste por props, pasándole **props** como argumento.
+   - Si el estado **isFav** es **`true`**, entonces settea ese estado en false, y despacha la función **removeFav** que recibiste por props pasándole el **id** del personaje como argumento.
+   - Si el estado **isFav** es **`false`**, entonces settea ese estado en true, y despacha la función **addFav** que recibiste por props, pasándole **props** como argumento.
 
 5. Ahora te ayudaremos a crear un renderizado condicional. Si tu estado local **`isFav`** es true, entonces se mostrará un botón. Si es false, se mostrará otro botón. Para esto, copia y pega el siguiente código al comienzo del renderizado de tu componente (no te olvides de darle estilos).
 
@@ -897,9 +890,9 @@ Si revisas, esta aplicación tiene un pequeño bug que tendrás que resolver... 
 
 En esta homework crearemos dos cosas que harán más completa nuestra aplicación 😄.
 
--  Haremos un **filtrado** para nuestros personajes favoritos. Vamos a filtrar todos los personajes según su género: **`Male`**, **`Female`**, **`Genderless`** y **`unknown`**.
+- Haremos un **filtrado** para nuestros personajes favoritos. Vamos a filtrar todos los personajes según su género: **`Male`**, **`Female`**, **`Genderless`** y **`unknown`**.
 
--  Por otro lado haremos un **ordenamiento** para nuestros personajes favoritos. Vamos a ordenar todos los personajes por su **id** (de mayor a menor y viceversa).
+- Por otro lado haremos un **ordenamiento** para nuestros personajes favoritos. Vamos a ordenar todos los personajes por su **id** (de mayor a menor y viceversa).
 
 <br />
 
@@ -927,8 +920,8 @@ Dirígete al archivo **`reducer`** y sigue estos pasos:
 
 2. Modificaremos el caso **ADD_FAV** de la siguiente manera:
 
-   -  Dentro de la copia de tu estado global, reemplaza la propiedad **myFavorites** por **allCharacters**.
-   -  Cuando retornes tu estado, agrega la propiedad **`allCharacters`** que también sea igual a la copia en la que agregaste el nuevo personaje.
+   - Dentro de la copia de tu estado global, reemplaza la propiedad **myFavorites** por **allCharacters**.
+   - Cuando retornes tu estado, agrega la propiedad **`allCharacters`** que también sea igual a la copia en la que agregaste el nuevo personaje.
 
    </br >
 
@@ -936,11 +929,11 @@ Dirígete al archivo **`reducer`** y sigue estos pasos:
 
 4. Crea un nuevo caso con el nombre "**ORDER**". Aquí vamos a ordenar nuestros personajes favoritos de forma ascendente y descendente. Para esto:
 
-   -  Crea una copia de tu estado global **allCharacters**.
-   -  Utiliza el método **`sort`** para ordenar tus personajes de acuerdo a su **id**.
-   -  Si el payload es igual a "**A**", los personajes deben ordenarse de menor a mayor.
-   -  Si el payload es igual a "**D**, los personajes deben ordenarse de mayor a menor.
-   -  Finalmente retorna tu estado global y en la propiedad **myFavorites** guarda el ordenamiento que hiciste.
+   - Crea una copia de tu estado global **allCharacters**.
+   - Utiliza el método **`sort`** para ordenar tus personajes de acuerdo a su **id**.
+   - Si el payload es igual a "**A**", los personajes deben ordenarse de menor a mayor.
+   - Si el payload es igual a "**D**, los personajes deben ordenarse de mayor a menor.
+   - Finalmente retorna tu estado global y en la propiedad **myFavorites** guarda el ordenamiento que hiciste.
 
 > [**NOTA**]: investiga en la web cómo funciona el método **`sort`**.
 
@@ -954,8 +947,8 @@ Dirígete a tu componente **`Favorites`**. Dentro de él deberás:
 
 1. Crea una etiqueta **`select`**. Dentro de este selector:
 
-   -  Crea una etiqueta **`option`** con el atributo **value** igual a **"A"** (ascendente).
-   -  Crea una etiqueta **`option`** con el atributo **value** igual a **"D"** (descendente).
+   - Crea una etiqueta **`option`** con el atributo **value** igual a **"A"** (ascendente).
+   - Crea una etiqueta **`option`** con el atributo **value** igual a **"D"** (descendente).
 
    ```html
    <option value="Ascendente">Ascendente</option>
@@ -963,7 +956,7 @@ Dirígete a tu componente **`Favorites`**. Dentro de él deberás:
 
 2. Crea una segunda etiqueta **`select`**. Dentro de este selector deberás:
 
-   -  Crear 4 etiquetas **`option`**. Cada una con su atributo **value** igual a los siguientes valores: **Male**, **Female**, **Genderless** y **unknown**.
+   - Crear 4 etiquetas **`option`**. Cada una con su atributo **value** igual a los siguientes valores: **Male**, **Female**, **Genderless** y **unknown**.
 
    ```html
    <option value="Male">Male</option>
@@ -1006,9 +999,6 @@ A esta altura, tu filtro y ordenamiento debería estar funcionando de la siguien
 Agrega una opción adicional en el select del filtro para que muestre todos los personajes. Desarrolla la lógica para que ello ocurra.
 
 ---
-
-
-
 
 # Getting Started with Create React App
 
