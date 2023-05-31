@@ -1,0 +1,34 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Servidor del proyecto Riack nad Morty",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "nodemon ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ipproyectosysoluciones/rick_and_morty.git"
+  },
+  "keywords": [
+    "Rick",
+    "and",
+    "Morty",
+    "Nodejs",
+    "JavaScript",
+    "Express"
+  ],
+  "author": "Bladimir Gerson Parra B. - ipproyectosysoluciones",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ipproyectosysoluciones/rick_and_morty/issues"
+  },
+  "homepage": "https://github.com/ipproyectosysoluciones/rick_and_morty#readme",
+  "dependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
