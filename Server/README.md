@@ -36,10 +36,10 @@ Dirígete al directorio en el que tienes tu proyecto **`Rick & Morty`** y ábrel
 
 3. Dentro de la carpeta **src** crea lo siguiente:
 
-   -  Un archivo llamado **`index.js`**.
-   -  Una carpeta llamada **`controllers`**.
-   -  Una carpeta llamada **`routes`**.
-   -  Una carpeta llamada **`utils`**.
+   - Un archivo llamado **`index.js`**.
+   - Una carpeta llamada **`controllers`**.
+   - Una carpeta llamada **`routes`**.
+   - Una carpeta llamada **`utils`**.
 
 4. Copia el archivo [**data.js**](./data.js) que se encuentra en esta carpeta y pégalo dentro de tu pryecto en la carpeta **utils**.
 
@@ -101,13 +101,13 @@ Dírigete al archivo llamado **`index.js`** que creaste en el ejercicio 1. Dentr
 
 2. Busca tu función **`onSearch`**. Deberás reemplazar la url a la que se le está haciendo la petición:
 
-   -  **URL anitgua**: "**https://rickandmortyapi.com/api/character/${id}**".
-   -  **URL por la que debes reemplazar**: "**http://localhost:3001/rickandmorty/character/${id}**".
+   - **URL anitgua**: "**<https://rickandmortyapi.com/api/character/${id}>**".
+   - **URL por la que debes reemplazar**: "**<http://localhost:3001/rickandmorty/character/${id}>**".
 
 3. Ahora dirígete a tu componente **`Detail`** . Aquí tienes un **`useEffect`** que también está haciendo una petición a la API, por lo que debemos hacer el mismo cambio que antes:
 
-   -  **URL anitgua**: "**https://rickandmortyapi.com/api/character/${id}**".
-   -  **URL por la que debes reemplazar**: "**http://localhost:3001/rickandmorty/character/${id}**".
+   - **URL anitgua**: "**<https://rickandmortyapi.com/api/character/${id}>**".
+   - **URL por la que debes reemplazar**: "**<http://localhost:3001/rickandmorty/character/${id}>**".
 
 > **[NOTA]:** recuerda agregar el **id** como parámetro al final.
 

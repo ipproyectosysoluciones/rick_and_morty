@@ -1,22 +1,25 @@
-const http = require( 'http' );
-const data = require('./src/utils/data');
+const http = require( 'node:http' );
+const { getCharById } = require( './controllers/getCharById' );
 
-const PORT = 3001;
-const server = http.createServer( ( res, req ) => {
-  res.setHeader( 'Access-Control-Allow-Origin', '*' );
+const PORT = 3001;  
+const HOST = 'localhost';
 
-  if ( req.url.includes( '/rickandmorty/character' )) {
-    const id = parseInt( req.url.split( '/' ).pop() );
-    const character = data.find(( character ) => character.id === id );
+http.createServer( ( res, req ) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
 
-    res.setHeader( 'Content-Type', 'application/json' );
-    res.end( JSON.stringify( character ) );
+  // if ( req.url.includes( '/rickandmorty/character' )) {
+  //   const id = req.url.split( '/' ).at( -1 );
+  //   const character = data.find(( character ) => character.id === +id );
+
+  //   return res.writeHead( 200, { 'Content-Type': 'application/json' } )
+  //   .end( JSON.stringify( character ) );
+    
+  // }
+  if ( req.url.includes( '/rickandmorty/character' ) ) {
+    const id = req.url.split( '/' ).at( -1 );
+
+    getCharById( res, +id);
   }
+}).listen( PORT, HOST, () => {
+  console.log( `Servidor ${ HOST } escuchando en el puerto ${ PORT }`);
 });
-
-
-server.listen( PORT, () => {
-  console.log('Servidor escuchando en el puerto 3001');
-});
-
-module.exports = server;

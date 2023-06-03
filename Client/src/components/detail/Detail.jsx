@@ -12,7 +12,7 @@ export default function Detail () {
   const [ character, setCharacter ] = useState({});
 
   useEffect(() => {
-      axios(`${ URL_BASE }/${ id }`).then(( {data} ) => {
+      axios( `http://localhost:3001/rickandmorty/character/${ id }` ).then(( {data} ) => {
         if ( data.name ) {
             setCharacter( data );
         } else {

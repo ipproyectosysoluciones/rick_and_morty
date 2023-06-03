@@ -36,7 +36,7 @@ function App() {
    // }, [access, navigate]);
 
    const onSearch = ( id ) => {
-      axios(`${ URL_BASE }/${ id }`)
+      axios( `http://localhost:3001/rickandmorty/character/${ id }` )
       .then(({ data }) => {
          if ( data.name ) {
             setCharacters(( oldChars ) => [ ...oldChars, data ]);

@@ -4,7 +4,7 @@ import { addFav, removeFav } from '../../redux/actions';
 import { connect } from 'react-redux';
 import { useState, useEffect } from 'react';
 
-// eslint-disable-next-line
+
 
 // { id, name, status, species, gender, image, origin }
 
