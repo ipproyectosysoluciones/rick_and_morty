@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { useState, useEffect } from 'react';
 
 
-
 // { id, name, status, species, gender, image, origin }
 
 function Card ( { id, name, status, species, gender, image, origin, onClose, addFav, removeFav, myFavorites } ) {
@@ -18,7 +17,7 @@ function Card ( { id, name, status, species, gender, image, origin, onClose, add
          removeFav( id );
       } else {
          setIsFav( true );
-         addFav({ id, name, status, species, gender, image, origin })
+         addFav({ id, name, status, species, gender, image, origin, onClose })
       }
    };
 
