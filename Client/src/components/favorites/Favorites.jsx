@@ -3,10 +3,10 @@ import { connect, useDispatch } from "react-redux";
 import { filterCards, orderCards } from '../../redux/actions';
 import { useState } from "react";
 
-
 const Favorites = ( { myFavorites } ) => {
-
+  
   const dispatch = useDispatch();
+  // eslint-disable-next-line to the line before.
   const [ aux, setAux ] = useState( false );
 
   const handleOrder = ( event ) => {
