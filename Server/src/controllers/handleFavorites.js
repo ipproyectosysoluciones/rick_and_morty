@@ -1,7 +1,7 @@
 
 let myFavorites = [];
 
-const postFav = ( res, req ) => {
+const postFav = ( req, res ) => {
   try {
     const character = req.body;
     const characterFound = myFavorites.find( fav => fav.id === character.id );
@@ -17,7 +17,7 @@ const postFav = ( res, req ) => {
   }
 };
 
-const deleteFav = ( res, req ) => {
+const deleteFav = ( req, res ) => {
   const { id } = req.params;
 
   myFavorites = myFavorites.filter( ( favorite ) => 

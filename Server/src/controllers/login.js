@@ -1,6 +1,6 @@
 const users = require( '../utils/users' );
 
-const login = ( res, req ) => {
+const login = ( req, res ) => {
   const { email, password } = req.query;
 
   const userFound = users.find( ( user ) => 
