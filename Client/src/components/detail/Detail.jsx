@@ -3,9 +3,6 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-// eslint-disable-next-line
-const URL_BASE = 'https://rickandmortyapi.com/api/character';
-
 export default function Detail () {
   
   const { id } = useParams();

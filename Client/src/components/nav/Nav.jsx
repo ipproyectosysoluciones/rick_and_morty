@@ -1,22 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import SearchBar from "../searchBar/SearchBar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // eslint-disable-next-line
- export default function Nav ( { onSearch } ) {
-  const [ setAccess ] = useState();
+ export default function Nav ( { onSearch, setAccess } ) {
+  const navigate = useNavigate();
 
   const handleLogout = () => {
-    // Eliminar los permisos de acceso aquí
-    // Por ejemplo, puedes borrar el token de autenticación almacenado en el localStorage o en el estado global
-
-    // Redirigir al componente Form
     setAccess( false );
+    navigate( '/' );
+  };
+
+  const handleRandom = () => {
+    const randomId = Math.floor( Math.random() * 826 ) + 1;
+    onSearch( randomId );
   };
  
   return (
     <nav>
       <SearchBar onSearch={ onSearch } />
+      <button onClick={ handleRandom }>Random</button>
       <button>
         <Link to='/about' >About |</Link>
       </button>
@@ -26,7 +29,7 @@ import { Link } from "react-router-dom";
       <button>
         <Link to='/favorites' > Favorites |</Link>
       </button>
-      <button cnClick={ handleLogout }>Log out</button>
+      <button onClick={ handleLogout }>Log out</button>
     </nav>
   );
 }

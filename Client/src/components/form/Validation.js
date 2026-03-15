@@ -8,7 +8,7 @@ export default function validation ( userData )  {
   const email = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
   const password = /^(?=.*\d).{6,10}$/;
 
-  if ( email.test( userData.email ) ) {
+  if ( !email.test( userData.email ) ) {
     errors.email = `El email ${ userData.email }, no es valido o no existe`;
   }
   if ( !userData.email ) {

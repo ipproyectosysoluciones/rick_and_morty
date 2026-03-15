@@ -32,7 +32,7 @@ const Form = ( { login } ) => {
   };
   
   return ( 
-    <Form onSubmit={ handleSubmit }>
+    <form onSubmit={ handleSubmit }>
       <label htmlFor='email'>Email</label>
       <input 
         type='email'
@@ -54,7 +54,7 @@ const Form = ( { login } ) => {
       { errors.password && <p>{ errors.password }</p> }
       
       <button type='submit'>Submit</button>
-    </Form>
+    </form>
   );
 }
 

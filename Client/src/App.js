@@ -5,6 +5,7 @@ import About from './components/about/About';
 import Detail from './components/detail/Detail';
 import Form from './components/form/Form';
 import Favorites from './components/favorites/Favorites';
+import Error404 from './components/error404/Error404';
 import axios from 'axios';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
@@ -31,7 +32,7 @@ function App() {
          const { data } = await axios( URL + `?email=${ email }&password=${ password }` );
          const { access } = data;
          
-            setAccess(data);
+             setAccess(access);
             access && navigate('/home');
 
       } catch ( error ) {
@@ -48,6 +49,10 @@ function App() {
          const { data } = await axios( `http://localhost:3001/rickandmorty/character/${ id }` );
          
          if ( data.name ) {
+            const isDuplicate = characters.some( ( character ) => character.id === data.id );
+            if ( isDuplicate ) {
+               return alert( '¡Este personaje ya está en la lista!' );
+            }
             setCharacters(( oldChars ) => [ ...oldChars, data ]);
          }
 
@@ -75,8 +80,8 @@ function App() {
             <Route path='/home' element={ <Cards characters={ characters } onClose={ onClose } /> } />
             <Route path='/about' element={ <About/> } />
             <Route path='/detail/:id' element={ <Detail/> } />
-            <Route path='favorites' element={ <Favorites/> } />
-            {/* <Route path='*' element={ <Home/> } /> */}
+             <Route path='favorites' element={ <Favorites/> } />
+             <Route path='*' element={ <Error404/> } />
          </Routes>
       </div>
    );

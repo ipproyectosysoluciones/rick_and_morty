@@ -17,7 +17,7 @@ function Card ( { id, name, status, species, gender, image, origin, onClose, add
          removeFav( id );
       } else {
          setIsFav( true );
-         addFav({ id, name, status, species, gender, image, origin, onClose })
+         addFav({ id, name, status, species, gender, image, origin })
       }
    };
 
