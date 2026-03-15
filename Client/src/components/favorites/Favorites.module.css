@@ -1,0 +1,84 @@
+.container {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.select {
+  border: 1px solid rgba(0, 176, 200, 0.3);
+  border-radius: 8px;
+  height: 36px;
+  padding: 0 12px;
+  background: rgba(20, 20, 40, 0.85);
+  color: #e0e0e0;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  min-width: 140px;
+}
+
+.select:focus {
+  border-color: #00b0c8;
+  box-shadow: 0 0 8px rgba(0, 176, 200, 0.3);
+}
+
+.select option {
+  background: #1a1a2e;
+  color: #e0e0e0;
+}
+
+.favoritesGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.emptyState {
+  color: #888;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 12px;
+  }
+
+  .controls {
+    gap: 8px;
+  }
+
+  .select {
+    min-width: 120px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 8px;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .select {
+    width: 100%;
+    max-width: 250px;
+  }
+}

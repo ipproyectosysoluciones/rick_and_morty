@@ -1,6 +1,7 @@
 import React from "react";
 import SearchBar from "../searchBar/SearchBar";
 import { Link, useNavigate } from "react-router-dom";
+import styles from './Nav.module.css';
 
 // eslint-disable-next-line
  export default function Nav ( { onSearch, setAccess } ) {
@@ -17,19 +18,13 @@ import { Link, useNavigate } from "react-router-dom";
   };
  
   return (
-    <nav>
+    <nav className={ styles.nav }>
       <SearchBar onSearch={ onSearch } />
-      <button onClick={ handleRandom }>Random</button>
-      <button>
-        <Link to='/about' >About |</Link>
-      </button>
-      <button>
-        <Link to='/home' > Home |</Link>
-      </button>
-      <button>
-        <Link to='/favorites' > Favorites |</Link>
-      </button>
-      <button onClick={ handleLogout }>Log out</button>
+      <button className={ styles.navButton } onClick={ handleRandom }>Random</button>
+      <Link className={ styles.navLink } to='/about'>About</Link>
+      <Link className={ styles.navLink } to='/home'>Home</Link>
+      <Link className={ styles.navLink } to='/favorites'>Favorites</Link>
+      <button className={ styles.logoutButton } onClick={ handleLogout }>Log out</button>
     </nav>
   );
 }

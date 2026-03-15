@@ -1,3 +1,18 @@
 .App {
   text-align: center;
+  min-height: 100vh;
+}
+
+.App hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #97ce4c,
+    #00b0c8,
+    #97ce4c,
+    transparent
+  );
+  margin: 0;
 }

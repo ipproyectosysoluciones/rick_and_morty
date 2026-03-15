@@ -32,10 +32,10 @@ function Card ( { id, name, status, species, gender, image, origin, onClose, add
    return (
          <div className={ styles.container }>
 
-            <button onClick={ handleFavorite }>{ isFav ? '❤' : '🤍' }</button>
+            <button className={ styles.favButton } onClick={ handleFavorite } aria-label={ isFav ? 'Remove from favorites' : 'Add to favorites' }>{ isFav ? '❤' : '🤍' }</button>
 
             <div className={ styles.buttonContainer }>
-               <button onClick={ () => onClose( id ) }>X</button>
+               <button onClick={ () => onClose( id ) } aria-label={ `Remove ${ name }` }>X</button>
             </div>
 
             <div className={ styles.dataContainer }>

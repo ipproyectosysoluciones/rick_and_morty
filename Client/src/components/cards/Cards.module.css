@@ -1,6 +1,24 @@
-.cardsContainer{
+.cardsContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
+  padding: 20px;
+  gap: 8px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+  .cardsContainer {
+    padding: 12px;
+    gap: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardsContainer {
+    padding: 8px;
+    gap: 0;
+    justify-content: space-evenly;
+  }
+}

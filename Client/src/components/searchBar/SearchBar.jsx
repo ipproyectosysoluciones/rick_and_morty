@@ -17,6 +17,8 @@ export default function SearchBar ( { onSearch } ) {
                type='search'
                value={ id }
                onChange={ handleChange }
+               aria-label='Character ID'
+               placeholder='Character ID...'
             />
             <button onClick={ () => { onSearch( id ) }  }>Agregar</button>
             </>

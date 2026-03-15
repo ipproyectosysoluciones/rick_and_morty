@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import validation from './Validation';
+import styles from './Form.module.css';
 
 
 // eslint-disable-next-line
@@ -32,29 +33,40 @@ const Form = ( { login } ) => {
   };
   
   return ( 
-    <form onSubmit={ handleSubmit }>
-      <label htmlFor='email'>Email</label>
-      <input 
-        type='email'
-        name='email' 
-        value={ userData.email }
-        onChange={ handleChange }
-        placeholder='Ingrese su Email..'
-      />
-      { errors.email && <p>{ errors.email }</p> }
+    <div className={ styles.wrapper }>
+      <form className={ styles.form } onSubmit={ handleSubmit }>
+        <h2 className={ styles.title }>Rick & Morty</h2>
+        <div className={ styles.fieldGroup }>
+          <label className={ styles.label } htmlFor='email'>Email</label>
+          <input 
+            className={ styles.input }
+            id='email'
+            type='email'
+            name='email' 
+            value={ userData.email }
+            onChange={ handleChange }
+            placeholder='Ingrese su Email..'
+          />
+          { errors.email && <p className={ styles.error }>{ errors.email }</p> }
+        </div>
 
-      <label htmlFor='password'>Password</label>
-      <input 
-        type='password' 
-        name='password' 
-        value={ userData.password }
-        onChange={ handleChange }
-        placeholder='Ingrese su Password...'
-      />
-      { errors.password && <p>{ errors.password }</p> }
-      
-      <button type='submit'>Submit</button>
-    </form>
+        <div className={ styles.fieldGroup }>
+          <label className={ styles.label } htmlFor='password'>Password</label>
+          <input 
+            className={ styles.input }
+            id='password'
+            type='password' 
+            name='password' 
+            value={ userData.password }
+            onChange={ handleChange }
+            placeholder='Ingrese su Password...'
+          />
+          { errors.password && <p className={ styles.error }>{ errors.password }</p> }
+        </div>
+        
+        <button className={ styles.submitButton } type='submit'>Submit</button>
+      </form>
+    </div>
   );
 }
 
