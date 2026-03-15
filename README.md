@@ -94,7 +94,7 @@ Se utiliza la [Rick and Morty API](https://rickandmortyapi.com/), que cuenta con
 - Sección "About" con información del proyecto.
 
 ### Errores Corregidos
-Se solucionaron un total de 18 bugs distribuidos en las siguientes fases:
+Se solucionaron un total de 24 bugs distribuidos en las siguientes fases:
 
 - **Fase 1 (Servidor):**
   - Corregido el orden de los parámetros `(res, req)` en 4 funciones controladoras.
@@ -113,12 +113,36 @@ Se solucionaron un total de 18 bugs distribuidos en las siguientes fases:
   - Implementación del componente `Error404` y su respectiva ruta.
   - Adición del botón de personaje aleatorio.
   - Implementación de lógica para prevenir personajes duplicados.
+- **Fase 6 (UI/UX):**
+  - Corrección de tipografía en título "Rick and Morty" (antes "Riack").
+  - Arreglo de comentario ESLint malformado en `Favorites`.
+  - Corrección de sintaxis CSS nesting (`&:hover` → `.class:hover`).
+  - Adición de atributos de accesibilidad: `id`, `aria-label`, `placeholder`.
+  - Corrección de anidamiento inválido `<button><Link>` → `<Link>` con estilos.
+  - Arreglo del handler `onClose` en `Favorites` (antes undefined).
 
 ### Notas de Arquitectura
 - **Patrón Container-Presentational:** Separación de la lógica de los componentes visuales.
 - **Redux:** Utilizado para el manejo del estado global de los favoritos.
 - **Express REST API:** Actúa como proxy para las peticiones a la API externa.
 - **CSS Modules:** Estilos encapsulados por componente para evitar colisiones.
+
+### Diseño UI/UX
+- **Glassmorphism:** Sistema de diseño con tarjetas translúcidas y efecto `backdrop-filter: blur`.
+- **Paleta de colores:** Portal Green (`#97ce4c`), Portal Blue (`#00b0c8`), Red accent (`#ff6b6b`).
+- **Responsive Design:** Breakpoints para Mobile (`<480px`), Tablet (`480-768px`), Desktop (`>768px`).
+- **Accesibilidad:** Atributos `aria-label`, `id` en inputs, placeholders descriptivos.
+
+### Librerías (Versiones Actualizadas)
+| Paquete | Anterior | Actual |
+|---------|----------|--------|
+| client `react-router-dom` | 6.11.2 | 6.30.3 |
+| client `axios` | 1.4.0 | 1.4.0 (mantenido)* |
+| server `axios` | 1.4.0 | 1.9.0 |
+| server `morgan` | 1.10.0 | 1.10.1 |
+| server `nodemon` | 2.0.22 | 3.1.14 |
+
+*Axios 1.9+ rompe CRA/webpack 5 por dependencias de Node.js core. Se mantiene en 1.4.0.
 
 ### Endpoints del Servidor
 - `GET /rickandmorty/character/:id` — Obtener personaje por ID.
@@ -219,7 +243,7 @@ Powered by the [Rick and Morty API](https://rickandmortyapi.com/), featuring 826
 - About page.
 
 ### Bugs Fixed
-A total of 18 bugs were fixed across the following phases:
+A total of 24 bugs were fixed across the following phases:
 
 - **Phase 1 (Server):**
   - Fixed `(res, req)` parameter order in 4 controller functions.
@@ -238,12 +262,36 @@ A total of 18 bugs were fixed across the following phases:
   - Created `Error404` component and its route.
   - Added random character button.
   - Implemented duplicate character prevention.
+- **Phase 6 (UI/UX):**
+  - Fixed title typo "Rick and Morty" (was "Riack").
+  - Fixed malformed ESLint comment in `Favorites`.
+  - Fixed CSS nesting syntax (`&:hover` → `.class:hover`).
+  - Added accessibility attributes: `id`, `aria-label`, `placeholder`.
+  - Fixed invalid nesting `<button><Link>` → `<Link>` with styles.
+  - Fixed `onClose` handler in `Favorites` (was undefined).
 
 ### Architecture Notes
 - **Container-Presentational Pattern:** Separation of logic from UI components.
 - **Redux:** Used for global state management of favorites.
 - **Express REST API:** Acts as a proxy for external API requests.
 - **CSS Modules:** Component-scoped styles to prevent collisions.
+
+### UI/UX Design
+- **Glassmorphism:** Design system with translucent cards and `backdrop-filter: blur`.
+- **Color Palette:** Portal Green (`#97ce4c`), Portal Blue (`#00b0c8`), Red accent (`#ff6b6b`).
+- **Responsive Design:** Breakpoints for Mobile (`<480px`), Tablet (`480-768px`), Desktop (`>768px`).
+- **Accessibility:** `aria-label` attributes, `id` on inputs, descriptive placeholders.
+
+### Libraries (Updated Versions)
+| Package | Previous | Current |
+|---------|----------|---------|
+| client `react-router-dom` | 6.11.2 | 6.30.3 |
+| client `axios` | 1.4.0 | 1.4.0 (kept)* |
+| server `axios` | 1.4.0 | 1.9.0 |
+| server `morgan` | 1.10.0 | 1.10.1 |
+| server `nodemon` | 2.0.22 | 3.1.14 |
+
+*Axios 1.9+ breaks CRA/webpack 5 due to Node.js core dependencies. Kept at 1.4.0.
 
 ### Server Endpoints
 - `GET /rickandmorty/character/:id` — Get character by ID.
