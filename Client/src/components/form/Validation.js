@@ -1,7 +1,10 @@
 
 /**
- * @description Función de validacion del usuario y password del formulario
- * @param { Function } userData estado de errores del conponente Form
+ * Función de validación del usuario y password del formulario.
+ * @param {object} userData - Datos del usuario a validar.
+ * @param {string} userData.email - Correo electrónico del usuario.
+ * @param {string} userData.password - Contraseña del usuario.
+ * @returns {object} Objeto con los errores de validación.
  */
 export default function validation ( userData )  {
   const errors = {};

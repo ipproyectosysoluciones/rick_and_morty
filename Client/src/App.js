@@ -18,6 +18,11 @@ const URL = 'http://localhost:3001/rickandmorty/login/';
 // const PASSWORD = '1ABcde';
 
 
+/**
+ * Componente principal de la aplicación Rick & Morty.
+ * Gestiona el routing, autenticación y estado global.
+ * @returns {import('react').ReactElement} Elemento JSX renderizado
+ */
 function App() {
 
    const location = useLocation();

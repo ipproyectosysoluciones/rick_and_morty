@@ -146,6 +146,25 @@ rick_and_morty/
   - Use `@testing-library/react`.
   - Render components, simulate events, assert DOM output.
 
+### Linting & JSDoc
+- **ESLint:** Configured with JSDoc plugin for both Client and Server.
+- **Client:**
+  - Extends `react-app` and `react-app/jest`.
+  - Uses `eslint-plugin-jsdoc` for JSDoc validation.
+  - Scripts:
+    - `npm run lint` - Check for linting issues
+    - `npm run lint:fix` - Automatically fix linting issues
+- **Server:**
+  - Uses flat config format (`eslint.config.cjs`).
+  - Scripts:
+    - `npm run lint` - Check for linting issues
+    - `npm run lint:fix` - Automatically fix linting issues
+- **JSDoc Requirements:**
+  - All functions should have JSDoc comments.
+  - Use `{object}` not `{Object}` (lowercase types).
+  - Document parameters with `@param {type} name - description`.
+  - Document return values with `@returns {type} - description`.
+
 ### Git & Commits
 - **Atomic Commits:** One logical change per commit.
 - **Conventional Commits:** Follow format (e.g., `feat: add search bar`, `fix: resolve login loop`).
